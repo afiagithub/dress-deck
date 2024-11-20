@@ -13,6 +13,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        nun: ['"Nunito"', "sans-serif"],
+        sour: ['"Sour Gummy"', "sans-serif"],
+        rale: ['"Raleway"', "sans-serif"],
+      },
     },
   },
   plugins: [require('daisyui')],
