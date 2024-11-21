@@ -1,18 +1,24 @@
+"use client"
 import Link from "next/link"
+import React from 'react';
 
 const Navbar = () => {
+    const [visible, setVisible] = React.useState(false)
+    const clickDrop = () => {
+        setVisible(!visible)
+    }
     const links = <>
-        <li><Link href={'/'}>Home</Link></li>
-        <li><Link href={'/'}>Category</Link></li>
-        <li><Link href={'/'}>About Us</Link></li>
-        <li><Link href={'/'}>Blog</Link></li>
-        <li><Link href={'/'}>Contact</Link></li>
-    </>
+        <li onClick={clickDrop}><Link href={'/'}>Home</Link></li>
+        <li onClick={clickDrop}><Link href={'/login'}>Category</Link></li>
+        <li onClick={clickDrop}><Link href={'/'}>About Us</Link></li>
+        <li onClick={clickDrop}><Link href={'/'}>Blog</Link></li>
+        <li onClick={clickDrop}><Link href={'/'}>Contact</Link></li>
+    </>    
     return (
-        <div className="navbar px-5 lg:px-12 py-5 bg-[#EEE2DC] font-nun">
+        <div className="navbar px-5 lg:px-12 py-5 bg-[#EEE2DC] font-nun sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden" onClick={clickDrop}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -28,7 +34,9 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow uppercase">
+                        className={visible ? "menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 z-[50] w-52 p-2 shadow uppercase" :
+                            "hidden"
+                        }>
                         {links}
                     </ul>
                 </div>
@@ -40,8 +48,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-outline rounded-none border-2 border-[#AC3B61] text-[#AC3B61] 
-                hover:bg-[#AC3B61] hover:border-[#AC3B61] text-base">Log In</a>
+                <Link href={'/login'} className="btn btn-outline rounded-none border-2 border-[#AC3B61] text-[#AC3B61] 
+                hover:bg-[#AC3B61] hover:border-[#AC3B61] text-base">Log In</Link>
             </div>
         </div>
     )

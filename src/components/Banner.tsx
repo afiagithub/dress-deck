@@ -15,7 +15,7 @@ const Banner = () => {
                 {
                     bannerList.map((banner, idx) =>
                         <SwiperSlide key={idx}>
-                            <div className="pb-16 lg:pb-0 px-5 md:px-8 lg:px-24 w-full"
+                            <div className="pb-16 lg:pb-0 px-8 md:px-12 lg:px-24 w-full lg:pt-5"
                                 style={{ background: `linear-gradient(45deg, rgba(126,104,90,1) 0%, rgba(238,226,220,1) 30%, rgba(231,113,125,1) 75%)` }}>
 
                                 <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
