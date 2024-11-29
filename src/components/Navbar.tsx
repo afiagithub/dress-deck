@@ -48,7 +48,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link href={'/'} className="btn btn-outline rounded-none border-2 border-[#AC3B61] text-[#AC3B61] 
+                <Link href={'/login'} className="btn btn-outline rounded-none border-2 border-[#AC3B61] text-[#AC3B61] 
                 hover:bg-[#AC3B61] hover:border-[#AC3B61] text-base">Log In</Link>
             </div>
         </div>
